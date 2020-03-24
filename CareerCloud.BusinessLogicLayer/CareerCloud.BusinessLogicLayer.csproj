@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CareerCloud.ADODataAccessLayer\CareerCloud.ADODataAccessLayer.csproj" />
-    <ProjectReference Include="..\CareerCloud.Pocos\CareerCloud.Pocos.csproj" />
+       <ProjectReference Include="..\CareerCloud.Pocos\CareerCloud.Pocos.csproj" />
   </ItemGroup>
 
 </Project>

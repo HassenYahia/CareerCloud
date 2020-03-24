@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CareerCloud.Pocos.ApplicantJobApplicationPoco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Applicant Job Application</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicantProfile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyJob)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantProfile.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyJob.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

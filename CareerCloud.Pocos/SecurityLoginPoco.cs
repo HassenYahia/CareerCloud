@@ -7,7 +7,7 @@ using System.Text;
 namespace CareerCloud.Pocos
 {
     [Table("Security_Logins")]
-   public class SecurityLoginPoco : IPoco
+    public class SecurityLoginPoco : IPoco
     {
         [Key]
         public Guid Id { get; set; }
@@ -19,7 +19,7 @@ namespace CareerCloud.Pocos
         public DateTime? PasswordUpdate { get; set; }
         [Column("Agreement_Accepted_Date")]
         public DateTime? AgreementAccepted { get; set; }
-       
+
         [Column("Is_Locked")]
         public Boolean IsLocked { get; set; }
         [Column("Is_Inactive")]
@@ -36,6 +36,10 @@ namespace CareerCloud.Pocos
         [Column("Prefferred_Language")]
         public String PrefferredLanguage { get; set; }
         [Column("Time_Stamp")]
+        [NotMapped]
         public Byte[] TimeStamp { get; set; }
+        public virtual ICollection<ApplicantProfilePoco> ApplicantProfiles {get; set;}
+        public virtual ICollection<SecurityLoginsLogPoco> SecurityLoginsLogs { get; set; }
+        public virtual ICollection<SecurityLoginsRolePoco> SecurityLoginsRoles { get; set; }
     }
 }
